@@ -233,7 +233,7 @@ namespace SierraBreeze
         const bool maximized = isMaximized();
         const int width =  maximized ? c->width() : c->width() - 2*s->largeSpacing()*Metrics::TitleBar_SideMargin;
         const int height = maximized ? borderTop() : borderTop() - s->smallSpacing()*Metrics::TitleBar_TopMargin;
-        const int x = maximized ? 0 : s->largeSpacing()*Metrics::TitleBar_SideMargin;
+        const int x = maximized ? 0 : m_internalSettings->buttonHPadding();
         const int y = maximized ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin;
         setTitleBar(QRect(x, y, width, height));
     }
