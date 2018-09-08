@@ -170,7 +170,7 @@ namespace SierraBreeze
 
         // render background
         const QColor backgroundColor( this->backgroundColor() );
-        if( backgroundColor.isValid() )
+        if( backgroundColor.isValid() && type() == DecorationButtonType::ContextHelp )
         {
             painter->setPen( Qt::NoPen );
             painter->setBrush( backgroundColor );
@@ -184,9 +184,13 @@ namespace SierraBreeze
 
             // setup painter
             QPen pen( foregroundColor );
+            if ( type() == DecorationButtonType::ContextHelp ) {
+                pen = QPen(Qt::white);
+            }
+
             pen.setCapStyle( Qt::RoundCap );
             pen.setJoinStyle( Qt::MiterJoin );
-            pen.setWidthF( 1.1*qMax((qreal)1.0, 20/width ) );
+            pen.setWidthF( 1.25*qMax((qreal)1.0, 20/width ) );
 
             painter->setPen( pen );
             painter->setBrush( Qt::NoBrush );
