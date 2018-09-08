@@ -184,7 +184,7 @@ namespace SierraBreeze
 
             // setup painter
             QPen pen( foregroundColor );
-            if ( type() == DecorationButtonType::ContextHelp ) {
+            if ( backgroundColor.isValid() && type() == DecorationButtonType::ContextHelp ) {
                 pen = QPen(Qt::white);
             }
 
