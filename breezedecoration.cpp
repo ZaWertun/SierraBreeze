@@ -76,7 +76,7 @@ namespace SierraBreeze
     //________________________________________________________________
     Decoration::Decoration(QObject *parent, const QVariantList &args)
         : KDecoration2::Decoration(parent, args)
-        , m_animation( new QPropertyAnimation( this ) )
+        , m_animation( new QPropertyAnimation( this ) ), m_KonsoleTitleBarColorValid ( false )
     {
         g_sDecoCount++;
     }
