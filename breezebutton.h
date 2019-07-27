@@ -114,6 +114,7 @@ namespace SierraBreeze
 
         //* draw button icon
         void drawIcon( QPainter *) const;
+        void drawButtonCircle(QPainter *painter, const QColor &background, const QColor &border) const;
 
         //*@name colors
         //@{
