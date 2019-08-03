@@ -173,7 +173,6 @@ namespace SierraBreeze
 
         const qreal width( m_iconSize.width() );
         painter->scale( width/20, width/20 );
-        painter->translate( 1, 1 );
 
         // render background
         const QColor backgroundColor( this->backgroundColor() );
@@ -231,8 +230,8 @@ namespace SierraBreeze
                     if (c->isActive())
                         iconPen.setColor(icon);
                     painter->setPen(iconPen);
-                    painter->drawLine(QPointF(6.5, 6), QPointF(13, 12.5));
-                    painter->drawLine(QPointF(6.5, 12.5), QPointF(13, 6));
+                    painter->drawLine(QPointF(6, 6), QPointF(12.5, 12.5));
+                    painter->drawLine(QPointF(6, 12.5), QPointF(12.5, 6));
                   }
                   painter->setPen( pen );
                   break;
@@ -253,13 +252,13 @@ namespace SierraBreeze
                   {
                     // two triangles
                     QPainterPath path1, path2;
-                    path1.moveTo(4.5, 14.5);
-                    path1.lineTo(12 , 14);
-                    path1.lineTo(5  , 7);
+                    path1.moveTo(4   , 14);
+                    path1.lineTo(11.5, 13.5);
+                    path1.lineTo(4.5 , 6.5);
 
-                    path2.moveTo(14.5, 4.5);
-                    path2.lineTo(7   , 5);
-                    path2.lineTo(14  , 12);
+                    path2.moveTo(14  , 4);
+                    path2.lineTo(6.5 , 4.5);
+                    path2.lineTo(13.5, 11.5);
 
                     painter->fillPath(path1, QBrush(c->isActive() ? icon : hover_hint_color));
                     painter->fillPath(path2, QBrush(c->isActive() ? icon : hover_hint_color));
@@ -282,7 +281,7 @@ namespace SierraBreeze
                   if ( isHovered() )
                   {
                     QPainterPath path;
-                    path.addRect(4, 8, 11, 3.5);
+                    path.addRect(3.5, 7.5, 11, 3.5);
                     painter->fillPath(path, QBrush(c->isActive() ? icon : hover_hint_color));
                   }
                   painter->setPen( pen );
@@ -438,7 +437,7 @@ namespace SierraBreeze
         // draw circle:
         qreal thickness = 1;
         painter->setPen(QPen(border, thickness));
-        painter->drawEllipse(QRectF(thickness, thickness, 18 - thickness, 18 - thickness));
+        painter->drawEllipse(QRectF(0, 0, 18, 18));
     }
 
     //__________________________________________________________________
