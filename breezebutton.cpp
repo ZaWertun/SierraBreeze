@@ -231,8 +231,8 @@ namespace SierraBreeze
                     if (c->isActive())
                         iconPen.setColor(icon);
                     painter->setPen(iconPen);
-                    painter->drawLine(QPointF(6, 6), QPointF(12.5, 12.5));
-                    painter->drawLine(QPointF(6, 12.5), QPointF(12.5, 6));
+                    painter->drawLine(QPointF(6.5, 6), QPointF(13, 12.5));
+                    painter->drawLine(QPointF(6.5, 12.5), QPointF(13, 6));
                   }
                   painter->setPen( pen );
                   break;
@@ -253,13 +253,13 @@ namespace SierraBreeze
                   {
                     // two triangles
                     QPainterPath path1, path2;
-                    path1.moveTo(4, 14);
-                    path1.lineTo(11.5, 13.5);
-                    path1.lineTo(4.5, 6.5);
+                    path1.moveTo(4.5, 14.5);
+                    path1.lineTo(12 , 14);
+                    path1.lineTo(5  , 7);
 
-                    path2.moveTo(14, 4);
-                    path2.lineTo(6.5, 4.5);
-                    path2.lineTo(13.5, 11.5);
+                    path2.moveTo(14.5, 4.5);
+                    path2.lineTo(7   , 5);
+                    path2.lineTo(14  , 12);
 
                     painter->fillPath(path1, QBrush(c->isActive() ? icon : hover_hint_color));
                     painter->fillPath(path2, QBrush(c->isActive() ? icon : hover_hint_color));
