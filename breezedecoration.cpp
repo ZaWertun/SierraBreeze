@@ -133,10 +133,10 @@ namespace SierraBreeze
         if( !m_internalSettings->drawTitleBarSeparator() ) return QColor();
         if( m_animation->state() == QPropertyAnimation::Running )
         {
-            QColor color( c->palette().color( QPalette::Highlight ) );
+            QColor color( c->palette().color( QPalette::Mid ) );
             color.setAlpha( color.alpha()*m_opacity );
             return color;
-        } else if( c->isActive() ) return c->palette().color( QPalette::Highlight );
+        } else if( c->isActive() ) return c->palette().color( QPalette::Mid );
         else return QColor();
     }
 
@@ -635,14 +635,17 @@ void Decoration::createButtons()
 
         }
 
-        const QColor outlineColor( this->outlineColor() );
-        if( !c->isShaded() && outlineColor.isValid() )
+        if (!isKonsoleWindow(c))
         {
-            // outline
-            painter->setRenderHint( QPainter::Antialiasing, false );
-            painter->setBrush( Qt::NoBrush );
-            painter->setPen( outlineColor );
-            painter->drawLine( titleRect.bottomLeft(), titleRect.bottomRight() );
+            const QColor outlineColor( this->outlineColor() );
+            if( !c->isShaded() && outlineColor.isValid() )
+            {
+                // outline
+                painter->setRenderHint( QPainter::Antialiasing, false );
+                painter->setBrush( Qt::NoBrush );
+                painter->setPen( outlineColor );
+                painter->drawLine( titleRect.bottomLeft(), titleRect.bottomRight() );
+            }
         }
 
         painter->restore();
