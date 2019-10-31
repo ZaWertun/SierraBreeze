@@ -217,8 +217,8 @@ namespace SierraBreeze
                 {
                   // Red
                   QColor icon = QColor(127, 5, 8);
-                  QColor border = QColor(222, 69, 67);
-                  QColor background = QColor(253, 87, 84);
+                  QColor border = QColor(211, 81, 69);
+                  QColor background = QColor(254, 98, 84);
                   if (!c->isActive()) {
                     border = inactive_border;
                     background = inactive_bg;
@@ -241,8 +241,8 @@ namespace SierraBreeze
                 {
                   // Green
                   QColor icon = QColor(11, 101, 14);
-                  QColor border = QColor(40, 169, 51);
-                  QColor background = QColor(52, 200, 72);
+                  QColor border = QColor(33, 178, 53);
+                  QColor background = QColor(40, 211, 63);
                   if (!c->isActive()) {
                     border = inactive_border;
                     background = inactive_bg;
@@ -271,8 +271,8 @@ namespace SierraBreeze
                 {
                   // Yellow
                   QColor icon = QColor(153, 87, 18);
-                  QColor border = QColor(221, 159, 50);
-                  QColor background = QColor(254, 187, 64);
+                  QColor border = QColor(205, 167, 50);
+                  QColor background = QColor(253, 201, 45);
                   if (!c->isActive()) {
                     border = inactive_border;
                     background = inactive_bg;
@@ -292,7 +292,7 @@ namespace SierraBreeze
                 {
                   // Sky blue
                   QColor icon = QColor(42, 70, 66); // brightness: 70
-                  QColor border = QColor(108, 180, 172);
+                  QColor border = QColor(115, 198, 189);
                   QColor background = QColor(125, 209, 200);
                   if (!c->isActive()) {
                     border = inactive_border;
