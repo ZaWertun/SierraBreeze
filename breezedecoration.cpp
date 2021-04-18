@@ -362,7 +362,7 @@ namespace SierraBreeze
           return false;
         }
 
-        KWindowInfo info(dc->windowId(), 0, NET::WM2WindowClass | NET::WM2WindowRole);
+        KWindowInfo info(dc->windowId(), NET::Properties(), NET::WM2WindowClass | NET::WM2WindowRole);
 
         return info.valid() &&
           info.windowClassClass() == QByteArray("konsole") &&
